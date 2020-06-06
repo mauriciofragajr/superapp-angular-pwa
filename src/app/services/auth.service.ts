@@ -14,6 +14,8 @@ export class AuthService {
   constructor(private router: Router) {
     this.userSubject = new BehaviorSubject<User>(null);
     this.currentUser = this.userSubject.asObservable();
+
+    // Pegar do localstorage
   }
 
   public get getUser(): User {
@@ -23,11 +25,11 @@ export class AuthService {
   login(token: string) {
     const newUser: User = { token }
     this.userSubject.next(newUser);
-    this.router.navigate(['home']);
+    this.router.navigate(['/home']);
   }
 
   logout() {
     this.userSubject.next(null);
-    this.router.navigate(['home']);
+    this.router.navigate(['/login']);
   }
 }
