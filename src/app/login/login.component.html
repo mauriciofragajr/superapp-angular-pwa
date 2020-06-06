@@ -1,6 +1,6 @@
 <div *ngIf="showLogin">
     <p>Você precisa efeturar o login para continuar</p>
-    <a [routerLink]="" (click)="authService.login(jwt)">Login</a>
+    <a [routerLink]="" (click)="login()">Login</a>
 </div>
 
 <div *ngIf="!showLogin">
