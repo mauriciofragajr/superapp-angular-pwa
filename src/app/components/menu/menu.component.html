@@ -1,11 +1,14 @@
 <ul>
     <li>
-        <a href="/">Home</a>
+        <a [routerLink]="['home']">Home</a>
     </li>
     <li>
-        <a href="profile">Profile</a>
+        <a [routerLink]="['profile']">Profile</a>
     </li>
     <li>
-        <a href="facial-rekognition">Facial Rekognition</a>
+        <a [routerLink]="['facial-rekognition']">Facial Rekognition</a>
+    </li>
+    <li *ngIf="isLogged">
+        <a [routerLink]="['']" (click)="authService.logout()">Sair</a>
     </li>
 </ul>
