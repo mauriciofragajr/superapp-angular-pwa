@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/User';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,22 +15,24 @@ export class AuthService {
   constructor(private router: Router) {
     this.userSubject = new BehaviorSubject<User>(null);
     this.currentUser = this.userSubject.asObservable();
-
-    // Pegar do localstorage
   }
 
   public get getUser(): User {
     return this.userSubject.value;
   }
 
-  login(token: string) {
+  setUser(token: string) {
     const newUser: User = { token }
     this.userSubject.next(newUser);
     this.router.navigate(['/home']);
   }
 
+  toLoginPage() {
+    window.location.replace(`${environment.authServiceUrl}/auth?appId=${environment.authServiceAppId}`);
+  }
+
   logout() {
     this.userSubject.next(null);
-    this.router.navigate(['/login']);
+    window.location.replace(`${environment.authServiceUrl}/auth/logout`);
   }
 }
