@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
+import { UpdateService } from './services/update.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,6 @@ import { SwUpdate } from '@angular/service-worker';
 export class AppComponent {
   title = 'SuperApp';
 
-  constructor(private swUpdate: SwUpdate) {
-    swUpdate.available.subscribe((event) => {
-      console.log('Update available')
-    })
+  constructor(private updateService: UpdateService) {
   }
 }
