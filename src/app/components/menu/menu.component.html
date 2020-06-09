@@ -1,14 +1,10 @@
-<ul *ngIf="isLogged">
-    <li>
+<mat-toolbar>
+    <span>Super App</span>
+    <div *ngIf="isLogged">
         <a [routerLink]="['home']">Home</a>
-    </li>
-    <li>
         <a [routerLink]="['profile']">Profile</a>
-    </li>
-    <li>
-        <a [routerLink]="['facial-rekognition']">Facial Rekognition</a>
-    </li>
-    <li>
-        <span>Olá, {{authService.getUser?.name.split(' ')[0]}} </span><a [routerLink]="['']" (click)="authService.logout()">Sair</a>
-    </li>
-</ul>
+        <a [routerLink]="['facial-rekognition']">Facial</a>
+    </div>
+    <span>Olá, {{authService.getUser?.name.split(' ')[0]}} </span><a [routerLink]="['']"
+        (click)="authService.logout()">Sair</a>
+</mat-toolbar>

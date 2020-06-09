@@ -11,7 +11,11 @@ import { GeolocationService } from './services/geolocation.service';
 export class AppComponent {
   title = 'SuperApp';
 
-  constructor(private update: UpdateService, private push: PushService, private geolocation: GeolocationService) { }
+  constructor(
+    private update: UpdateService,
+    private push: PushService,
+    // private geolocation: GeolocationService // enable geolocation
+  ) { }
 
   ngOnInit() {
     this.push.subscribeToNotification();
