@@ -1,10 +1,5 @@
-<mat-toolbar>
-    <span>Super App</span>
-    <div *ngIf="isLogged">
-        <a [routerLink]="['home']">Home</a>
-        <a [routerLink]="['profile']">Profile</a>
-        <a [routerLink]="['facial-rekognition']">Facial</a>
-    </div>
-    <span>Olá, {{authService.getUser?.name.split(' ')[0]}} </span><a [routerLink]="['']"
-        (click)="authService.logout()">Sair</a>
-</mat-toolbar>
+<div>
+    <a [routerLink]="['home']">Home</a>
+    <a [routerLink]="['profile']">Profile</a>
+    <a [routerLink]="['facial-rekognition']">Facial</a>
+</div>

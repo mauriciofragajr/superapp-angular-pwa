@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { PushService } from 'src/app/services/push.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,14 +7,8 @@ import { PushService } from 'src/app/services/push.service';
 })
 export class MenuComponent implements OnInit {
 
-  isLogged: boolean = false;
-
-  constructor(public authService: AuthService, public pushService: PushService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.authService.currentUser.subscribe(user => {
-      if (user) this.isLogged = true;
-      else this.isLogged = false;
-    })
   }
 }
