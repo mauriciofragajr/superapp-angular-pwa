@@ -8,10 +8,7 @@
     <li>
         <a [routerLink]="['facial-rekognition']">Facial Rekognition</a>
     </li>
-    <!-- <li>
-        <a [routerLink]="['']" (click)="pushService.subscribeToNotification()">Receber notificações</a>
-    </li> -->
     <li>
-        <span>Olá, {{authService.getUser.name.split(' ')[0]}} </span><a [routerLink]="['']" (click)="authService.logout()">Sair</a>
+        <span>Olá, {{authService.getUser?.name.split(' ')[0]}} </span><a [routerLink]="['']" (click)="authService.logout()">Sair</a>
     </li>
 </ul>
