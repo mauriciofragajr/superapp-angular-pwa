@@ -22,7 +22,7 @@ export class PushService {
 
   subscribeToNotification() {
     if (!this.swPush.isEnabled) {
-      console.log('Notificarion is not enabled');
+      console.log('Notification is not enabled');
       return;
     }
     this.swPush.requestSubscription({
