@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UpdateService } from './services/update.service';
+import { PushService } from './services/push.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,10 @@ import { UpdateService } from './services/update.service';
 export class AppComponent {
   title = 'SuperApp';
 
-  constructor(private updateService: UpdateService) {
+  constructor(private push: PushService) {
+  }
+
+  ngOnInit() {
+    this.push.subscribeToNotification();
   }
 }
