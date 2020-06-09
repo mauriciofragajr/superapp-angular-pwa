@@ -12,6 +12,6 @@
         <a [routerLink]="['']" (click)="pushService.subscribeToNotification()">Receber notificações</a>
     </li> -->
     <li>
-        <a [routerLink]="['']" (click)="authService.logout()">Sair</a>
+        <span>Olá, {{authService.getUser.name.split(' ')[0]}} </span><a [routerLink]="['']" (click)="authService.logout()">Sair</a>
     </li>
 </ul>
